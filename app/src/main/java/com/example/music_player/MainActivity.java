@@ -39,8 +39,11 @@ public class MainActivity extends AppCompatActivity {
                 MediaStore.Audio.Media.DURATION,
         };
 
+        String selection = MediaStore.Audio.Media.IS_MUSIC+"!=0";
+
         //To access songs from local storage
-        Cursor cursor=getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,)
+        Cursor cursor=getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,projection,selection,null,null);
+
     }
 
     boolean checkPermission(){
